@@ -363,20 +363,16 @@ async function runSwapBase(signer, walletAddress, pair, amount, iteration, total
 //  DONATE TO BUILDER
 // ════════════════════════════════════════════════════════════
 async function runDonate() {
-    console.log("
-" + "═".repeat(46));
+    console.log("\n" + "═".repeat(46));
     console.log("  💝 Donate ke Builder (19SENIMAN)");
     console.log("═".repeat(46));
-    console.log("
-  Terima kasih sudah menggunakan script ini!");
+    console.log("\n  Terima kasih sudah menggunakan script ini!");
     console.log(`  Setiap donasi senilai Rp1.500 sangat berarti 🙏
 `);
-    console.log("  Pilih jaringan untuk donate:
-");
+    console.log("  Pilih jaringan untuk donate:\n");
     console.log("    1. HyperEVM  (USDT0 / USDH / WHYPE)");
     console.log("    2. Base      (ETH / USDC / USDT)");
-    console.log("    0. Batal
-");
+    console.log("    0. Batal\n");
 
     const net = await question("  Pilih jaringan (0/1/2): ");
     if (net === "0") { console.log("  ↩️  Batal."); return; }
@@ -387,14 +383,11 @@ async function runDonate() {
         const signer   = new ethers.Wallet(process.env.PRIVATE_KEY, provider);
         const wallet   = await signer.getAddress();
 
-        console.log("
-  Pilih token untuk donate:
-");
+        console.log("\n  Pilih token untuk donate:\n");
         console.log("    1. USDT0  (~Rp1.500)");
         console.log("    2. USDH   (~Rp1.500)");
         console.log("    3. WHYPE  (~Rp1.500)");
-        console.log("    0. Batal
-");
+        console.log("    0. Batal\n");
 
         const tok = await question("  Pilih token (0/1/2/3): ");
         if (tok === "0") { console.log("  ↩️  Batal."); return; }
@@ -425,8 +418,7 @@ async function runDonate() {
         console.log(`     Token  : ${selected.symbol}`);
         console.log(`     Jumlah : ${selected.amount} ${selected.symbol} (~Rp1.500)`);
         console.log(`     Kepada : ${DONATE_ADDRESS}`);
-        const konfirm = await question("
-  Konfirmasi donate? (y/n): ");
+        const konfirm = await question("\n  Konfirmasi donate? (y/n): ");
         if (konfirm.toLowerCase() !== "y") { console.log("  ↩️  Dibatalkan."); return; }
 
         try {
@@ -447,14 +439,11 @@ async function runDonate() {
         const signer   = new ethers.Wallet(process.env.PRIVATE_KEY, provider);
         const wallet   = await signer.getAddress();
 
-        console.log("
-  Pilih token untuk donate:
-");
+        console.log("\n  Pilih token untuk donate:\n");
         console.log("    1. ETH   (~Rp1.500)");
         console.log("    2. USDC  (~Rp1.500)");
         console.log("    3. USDT  (~Rp1.500)");
-        console.log("    0. Batal
-");
+        console.log("    0. Batal\n");
 
         const tok = await question("  Pilih token (0/1/2/3): ");
         if (tok === "0") { console.log("  ↩️  Batal."); return; }
@@ -474,8 +463,7 @@ async function runDonate() {
             console.log(`     Token  : ETH`);
             console.log(`     Jumlah : ${DONATE_AMOUNTS.ETH} ETH (~Rp1.500)`);
             console.log(`     Kepada : ${DONATE_ADDRESS}`);
-            const konfirm = await question("
-  Konfirmasi donate? (y/n): ");
+            const konfirm = await question("\n  Konfirmasi donate? (y/n): ");
             if (konfirm.toLowerCase() !== "y") { console.log("  ↩️  Dibatalkan."); return; }
             try {
                 console.log(`
@@ -519,8 +507,7 @@ async function runDonate() {
             console.log(`     Token  : ${selected.symbol}`);
             console.log(`     Jumlah : ${selected.amount} ${selected.symbol} (~Rp1.500)`);
             console.log(`     Kepada : ${DONATE_ADDRESS}`);
-            const konfirm = await question("
-  Konfirmasi donate? (y/n): ");
+            const konfirm = await question("\n  Konfirmasi donate? (y/n): ");
             if (konfirm.toLowerCase() !== "y") { console.log("  ↩️  Dibatalkan."); return; }
 
             try {
